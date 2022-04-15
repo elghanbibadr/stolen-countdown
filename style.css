@@ -1,0 +1,326 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.4rem;
+  font-family: "Red Hat Text", sans-serif;
+  color: white;
+  min-height: 100vh;
+  background: url(/usa-map.png) no-repeat bottom right 20%, url(/images/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#261e2f));
+  background: url(/images/pattern-hills.svg) no-repeat bottom right 20%, url(/images/bg-stars.svg), linear-gradient(to bottom, #191a24, #261e2f);
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    background: url(/images/pattern-hills.svg) no-repeat bottom/contain, url(/images/bg-stars.svg), -webkit-gradient(linear, left top, left bottom, from(#191a24), to(#261e2f));
+    background: url(/images/pattern-hills.svg) no-repeat bottom/contain, url(/images/bg-stars.svg), linear-gradient(to bottom, #191a24, #261e2f);
+  }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 14.1rem 0 auto;
+  padding: 0 2.4rem;
+}
+.usa{
+    height: 4rem;
+}
+.container h1 {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  letter-spacing: clamp(0.3em, 5vw, 0.275em);
+  text-transform: uppercase;
+  text-align: center;
+}
+h3{
+    position:relative;
+    left: 450%;
+}
+
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 17.9%;
+}
+
+.flip-clock {
+  font-size: clamp(3.5rem, 5vw, 7.8rem);
+  color: #fb6087;
+  line-height: 0;
+  width: calc(1vw + 1.843em);
+  height: calc(1vw + 1.759em);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-perspective: 350px;
+          perspective: 350px;
+  border-radius: calc(0.25vw + 0.4rem);
+  -webkit-box-shadow: 0 0.14em 0 #191a24;
+          box-shadow: 0 0.14em 0 #191a24;
+}
+
+.flip-clock:not(:last-of-type) {
+  margin-right: calc(1vw + 1.76rem);
+}
+
+.flip-clock::before, .flip-clock::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  background-color: #343650;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  border: 1px solid #191a24;
+}
+
+.flip-clock::before {
+  content: attr(data-current-number);
+  bottom: 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 0 0 calc(0.25vw + 0.4rem) calc(0.25vw + 0.4rem);
+  border-top: none;
+}
+
+.flip-clock::after {
+  content: attr(data-next-number);
+  top: 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-radius: calc(0.25vw + 0.4rem) calc(0.25vw + 0.4rem) 0 0;
+  border-bottom: none;
+  background-color: #2d2f45;
+  color: #fb567f;
+}
+
+.flip-clock > * {
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flip-clock__caption {
+  font-size: clamp(0.7rem, 1vw, 1.4rem);
+  color: #8486a9;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: calc(-1.56rem - 1vw);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  -webkit-transition: -webkit-transform 0.7s ease-in;
+  transition: -webkit-transform 0.7s ease-in;
+  transition: transform 0.7s ease-in;
+  transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
+}
+
+.card.flipped {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.card-face {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card-face__front,
+.card-face__back {
+  background-color: #343650;
+  border: 1px solid #191a24;
+}
+
+.card-face__front {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-radius: calc(0.25vw + 0.4rem) calc(0.25vw + 0.4rem) 0 0;
+  border-bottom: none;
+  background-color: #2d2f45;
+  color: #fb567f;
+}
+
+.card-face__back {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  border-radius: 0 0 calc(0.25vw + 0.4rem) calc(0.25vw + 0.4rem);
+  border-top: none;
+}
+
+.cutout,
+.card__cutout {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cutout::before, .cutout::after,
+.card__cutout::before,
+.card__cutout::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0.15em;
+  height: 0.15em;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  background-color: #191a24;
+}
+
+.cutout::before,
+.card__cutout::before {
+  left: 0;
+  -webkit-clip-path: circle(50% at 0 50%);
+          clip-path: circle(50% at 0 50%);
+}
+
+.cutout::after,
+.card__cutout::after {
+  right: 0;
+  -webkit-clip-path: circle(50% at 100% 50%);
+          clip-path: circle(50% at 100% 50%);
+}
+
+.card-face__back.cutout::before, .card-face__back.cutout::after {
+  bottom: unset;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.footer {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  margin-bottom: 3rem;
+}
+
+.footer__item:not(:last-of-type) {
+  margin-right: 3.2rem;
+}
+
+.footer__link svg > path {
+  -webkit-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
+}
+
+.footer__link:hover svg > path {
+  fill: #fb6087;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
